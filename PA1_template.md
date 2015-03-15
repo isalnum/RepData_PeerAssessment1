@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -22,7 +27,7 @@ total_steps_per_day <- tapply(activity$steps, activity$date, sum, na.rm = TRUE)
 hist(total_steps_per_day, xlab = "Number of steps per day", main = "Total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 **Mean** value of the total number of steps is:
 
@@ -56,7 +61,7 @@ average_daily_activity_pattern <- sapply(intervals, function(x) mean(activity[ac
 plot(x = intervals, y = average_daily_activity_pattern, type = "l", xlab = "interval", ylab = "average number of steps", main = "Average daily activity pattern")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 On average, maximum number of steps has this interval:
 
@@ -98,7 +103,7 @@ total_steps_per_day2 <- tapply(activity2$steps, activity2$date, sum)
 hist(total_steps_per_day2, xlab = "Number of steps per day", main = "Total number of steps taken each day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
 And new value of **mean** is:
 
@@ -153,4 +158,4 @@ xyplot(pattern ~ interval | week_point, data = aggregated_data, type = "l", ylab
        main = "Average number of steps (weekend vs. weekday)", layout = c(1, 2))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
